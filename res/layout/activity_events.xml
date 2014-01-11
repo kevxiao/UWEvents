@@ -8,4 +8,28 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Events" >
 
+   <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical" >
+        
+        <View
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:background="@android:color/black" />
+        
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:text="@string/loading"/>
+        
+        <View
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:background="@android:color/black" />
+        
+    </LinearLayout>
+
 </RelativeLayout>
