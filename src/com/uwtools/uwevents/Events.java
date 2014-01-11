@@ -5,7 +5,8 @@ import android.app.Activity;
 import android.view.Menu;
 
 public class Events extends Activity {
-
+	
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,7 +18,8 @@ public class Events extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.events, menu);
-        return true;
+
+        return super.onCreateOptionsMenu(menu);
     }
     
 }
