@@ -4,10 +4,8 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 
-
 public class Events extends Activity {
-	
-	
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
