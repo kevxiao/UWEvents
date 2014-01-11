@@ -1,8 +1,7 @@
 package com.uwtools.uwevents;
 
 /**
- * This class file used while inserting data or retrieving data from 
- * SQLite database
+ * Retrieved from SQLite Database
  */
 public class WebSite {
     protected Integer _id;
