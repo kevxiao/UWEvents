@@ -55,7 +55,6 @@ public class RSSParser {
 		
 		// check if RSS XML fetched or not
 		if (rss_feed_xml != null) {
-			Toast.makeText(null, "Hello", Toast.LENGTH_LONG).show();
 			// successfully fetched rss xml, parse xml
 			try {
 				Document doc = this.getDomElement(rss_feed_xml);

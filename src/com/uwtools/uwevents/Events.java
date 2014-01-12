@@ -58,8 +58,7 @@ public class Events extends Activity {
 
 		rssParser = new RSSParser();
 		site = new WebSite();
-		site.setRSSLink("https://uwaterloo.ca/events/events/events.xml");
-		Toast.makeText(this, "Hello", Toast.LENGTH_LONG).show();
+		site.setRSSLink("http://uwaterloo.ca/events/events/events.xml");
 		rssFeed = rssParser.getRSSFeed(site.getRSSLink());
 
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
