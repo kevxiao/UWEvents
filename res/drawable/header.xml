@@ -7,7 +7,7 @@
     android:layout_alignParentTop="true"
     android:background="@drawable/header_background"
     android:orientation="horizontal">
-     
+    
     <!-- Logo -->
     <ImageView android:id="@+id/logo"
         android:layout_width="wrap_content"
