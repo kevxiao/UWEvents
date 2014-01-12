@@ -23,20 +23,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-        <!-- Add Site Activity -->
-        <activity android:name="com.uwtools.uwevents.SiteActivity" />
-
-        <!-- List rss items Activity -->
-        <activity
-            android:name="com.uwtools.uwevents.RSSItemsActivity"
-            android:configChanges="keyboardHidden|orientation" />
-
-        <!-- Display webpage Activity -->
-        <activity
-            android:name="com.uwtools.uwevents.DisPlayWebPageActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:theme="@android:style/Theme.NoTitleBar" />
     </application>
 
     <!-- Internet Permission -->
