@@ -8,10 +8,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
- 
-public class RSSDatabaseHandler extends SQLiteOpenHelper {
- 
-    // Database Version
+
+public class RSSDatabaseHandler extends SQLiteOpenHelper{
+	// Database Version
     private static final int DATABASE_VERSION = 1;
  
     // Database Name
@@ -55,7 +54,7 @@ public class RSSDatabaseHandler extends SQLiteOpenHelper {
      * Adding a new website in websites table Function will check if a site
      * already existed in database. If existed will update the old one else
      * creates a new row
-     * */
+     */
     public void addSite(WebSite site) {
         SQLiteDatabase db = this.getWritableDatabase();
  
@@ -79,7 +78,7 @@ public class RSSDatabaseHandler extends SQLiteOpenHelper {
  
     /**
      * Reading all rows from database
-     * */
+     */
     public List<WebSite> getAllSites() {
         List<WebSite> siteList = new ArrayList<WebSite>();
         // Select All Query
@@ -111,7 +110,7 @@ public class RSSDatabaseHandler extends SQLiteOpenHelper {
  
     /**
      * Updating a single row row will be identified by rss link
-     * */
+     */
     public int updateSite(WebSite site) {
         SQLiteDatabase db = this.getWritableDatabase();
  
@@ -131,7 +130,7 @@ public class RSSDatabaseHandler extends SQLiteOpenHelper {
  
     /**
      * Reading a row (website) row is identified by row id
-     * */
+     */
     public WebSite getSite(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
  
@@ -156,7 +155,7 @@ public class RSSDatabaseHandler extends SQLiteOpenHelper {
  
     /**
      * Deleting single row
-     * */
+     */
     public void deleteSite(WebSite site) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_RSS, KEY_ID + " = ?",
@@ -167,7 +166,7 @@ public class RSSDatabaseHandler extends SQLiteOpenHelper {
     /**
      * Checking whether a site is already existed check is done by matching rss
      * link
-     * */
+     */
     public boolean isSiteExists(SQLiteDatabase db, String rss_link) {
  
         Cursor cursor = db.rawQuery("SELECT 1 FROM " + TABLE_RSS
@@ -175,5 +174,4 @@ public class RSSDatabaseHandler extends SQLiteOpenHelper {
         boolean exists = (cursor.getCount() > 0);
         return exists;
     }
- 
 }

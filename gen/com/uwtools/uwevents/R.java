@@ -28,12 +28,10 @@ public final class R {
         public static final int ic_drawer=0x7f020004;
         public static final int ic_launcher=0x7f020005;
         public static final int rss=0x7f020006;
-        public static final int site_list=0x7f020007;
     }
     public static final class id {
-        public static final int action_refresh=0x7f08000a;
-        public static final int action_settings=0x7f080009;
-        public static final int btnAddSite=0x7f080008;
+        public static final int action_refresh=0x7f080009;
+        public static final int action_settings=0x7f080008;
         public static final int drawer_layout=0x7f080000;
         public static final int layoutHeader=0x7f080006;
         public static final int left_drawer=0x7f080001;

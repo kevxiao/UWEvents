@@ -1,4 +1,3 @@
-<<<<<<< Original
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.uwtools.uwevents"
@@ -24,7 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        
         <!-- Add Site Activity -->
         <activity android:name="com.uwtools.uwevents.SiteActivity" />
 
@@ -38,26 +37,9 @@
             android:name="com.uwtools.uwevents.DisPlayWebPageActivity"
             android:configChanges="keyboardHidden|orientation"
             android:theme="@android:style/Theme.NoTitleBar" />
-        <activity
-            android:name="com.uwtools.uwevents.AddNewSiteActivity"
-            android:label="@string/title_activity_add_new_site" >
-        </activity>
     </application>
 
     <!-- Internet Permission -->
     <uses-permission android:name="android.permission.Internet" />
 
 </manifest>
-
-=======
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" >
-
-    <application>
-        <activity android:name=".DisPlayWebPageActivity"
-            android:label="@string/title_activity_dis_play_web_page"
-            >
-        </activity>
-    </application>
-
-</manifest>
->>>>>>> Added

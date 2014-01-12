@@ -6,16 +6,15 @@
     android:background="#ffffff">
      
     <!-- Header -->
-    <include layout="@layout/header"/>
+    <include layout="@drawable/header"/>
   
     <ListView
         android:id="@android:id/list"
-        android:layout_below="@id/layoutHeader"
+        android:layout_below="@drawable/header"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:divider="#bababa"
         android:dividerHeight="1dp"
-        android:listSelector="@drawable/list_selector"
         android:background="#ffffff"
         android:cacheColorHint="#00000000"/>
   

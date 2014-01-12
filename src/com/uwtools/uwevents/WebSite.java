@@ -1,22 +1,20 @@
 package com.uwtools.uwevents;
 
 /**
- * This class file used while inserting data or retrieving data from 
- * SQLite database
- * **/
+ * Retrieved from SQLite Database
+ */
 public class WebSite {
-    Integer _id;
-    String _title;
-    String _link;
-    String _rss_link;
-    String _description;
+    protected Integer _id;
+    protected String _title;
+    protected String _link;
+    protected String _rss_link;
+    protected String _description;
      
-    // constructor
+    // constructors
     public WebSite(){
          
     }
- 
-    // constructor with parameters
+
     public WebSite(String title, String link, String rss_link, String description){
         this._title = title;
         this._link = link;
@@ -25,8 +23,8 @@ public class WebSite {
     }
      
     /**
-     * All set methods
-     * */
+     * setters
+     */
     public void setId(Integer id){
         this._id = id;
     }
@@ -48,8 +46,8 @@ public class WebSite {
     }
      
     /**
-     * All get methods
-     * */
+     * getters
+     */
     public Integer getId(){
         return this._id;
     }
