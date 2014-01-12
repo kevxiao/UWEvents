@@ -25,6 +25,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import android.util.Log;
+import android.widget.Toast;
 
 public class RSSParser {
 
@@ -50,11 +51,11 @@ public class RSSParser {
 	 */
 	public RSSFeed getRSSFeed(String rss_url) {
 		RSSFeed rssFeed = null;
-		String rss_feed_xml = null;
-		rss_feed_xml = this.getXmlFromUrl(rss_url);
+		String rss_feed_xml = this.getXmlFromUrl(rss_url);
 		
 		// check if RSS XML fetched or not
 		if (rss_feed_xml != null) {
+			Toast.makeText(null, "Hello", Toast.LENGTH_LONG).show();
 			// successfully fetched rss xml, parse xml
 			try {
 				Document doc = this.getDomElement(rss_feed_xml);

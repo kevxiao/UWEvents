@@ -14,8 +14,8 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:configChanges="keyboardHidden|orientation"
             android:name="com.uwtools.uwevents.Events"
+            android:configChanges="keyboardHidden|orientation"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,20 +23,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
+
         <!-- Add Site Activity -->
-        <activity android:name=".SiteActivity" />
-        
-        <!-- List rss items Activity-->
-        <activity android:name=".RSSItemsActivity"
-            android:configChanges="keyboardHidden|orientation"/>
-        
-        <!-- Display webpage Activity -->
-        <activity android:name=".DisPlayWebPageActivity"
-            android:theme="@android:style/Theme.NoTitleBar"
+        <activity android:name="com.uwtools.uwevents.SiteActivity" />
+
+        <!-- List rss items Activity -->
+        <activity
+            android:name="com.uwtools.uwevents.RSSItemsActivity"
             android:configChanges="keyboardHidden|orientation" />
+
+        <!-- Display webpage Activity -->
+        <activity
+            android:name="com.uwtools.uwevents.DisPlayWebPageActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name="com.uwtools.uwevents.ListRSSItemsActivity"
+            android:label="@string/title_activity_list_rssitems" >
+        </activity>
     </application>
 
     <!-- Internet Permission -->
     <uses-permission android:name="android.permission.Internet" />
+
 </manifest>

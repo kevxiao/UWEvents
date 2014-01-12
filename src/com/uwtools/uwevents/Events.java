@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import com.uwtools.uwevents.ListRSSItemsActivity.loadRSSFeedItems;
+
 import android.content.Intent;
 
 import android.view.ContextMenu;
@@ -26,6 +28,13 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.content.res.Configuration;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.AdapterView.OnItemClickListener;
 
 public class Events extends Activity {
 
@@ -35,6 +44,7 @@ public class Events extends Activity {
 	RSSParser rssParser;
 	RSSFeed rssFeed;
 	WebSite site;
+	ListView lv;
 
 	private ActionBarDrawerToggle mDrawerToggle;
 	private DrawerLayout mDrawerLayout;
@@ -49,7 +59,8 @@ public class Events extends Activity {
 		rssParser = new RSSParser();
 		site = new WebSite();
 		site.setRSSLink("https://uwaterloo.ca/events/events/events.xml");
-		//rssFeed = rssParser.getRSSFeed(site.getRSSLink());
+		Toast.makeText(this, "Hello", Toast.LENGTH_LONG).show();
+		rssFeed = rssParser.getRSSFeed(site.getRSSLink());
 
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 		mTitle = mDrawerTitle = getTitle();
