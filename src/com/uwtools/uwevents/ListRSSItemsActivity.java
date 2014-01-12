@@ -23,14 +23,15 @@ public class ListRSSItemsActivity extends ListActivity {
     // Progress Dialog
     private ProgressDialog pDialog;
  
+    // Array list for list view
+    ArrayList<HashMap<String, String>> rssItemList = new ArrayList<HashMap<String,String>>();
  
     RSSParser rssParser = new RSSParser();
-    ArrayList<HashMap<String, String>> rssItemList = new ArrayList<HashMap<String,String>>();
+     
     List<RSSItem> rssItems = new ArrayList<RSSItem>();
  
     RSSFeed rssFeed;
-
-    
+     
     private static String TAG_TITLE = "title";
     private static String TAG_LINK = "link";
     private static String TAG_DESRIPTION = "description";
@@ -40,8 +41,21 @@ public class ListRSSItemsActivity extends ListActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.rss_items_list);
-        String rss_link = "https://uwaterloo.ca/events/events/events.xml";
+        setContentView(R.layout.rss_item_list);
+         
+        // get intent data
+        Intent i = getIntent();
+         
+        // SQLite Row id
+        Integer site_id = Integer.parseInt(i.getStringExtra("id"));
+         
+        // Getting Single website from SQLite
+        RSSDatabaseHandler rssDB = new RSSDatabaseHandler(getApplicationContext());
+         
+         
+        WebSite site = rssDB.getSite(site_id);
+        String rss_link = site.getRSSLink();
+         
         /**
          * Calling a backgroung thread will loads recent articles of a website
          * @param rss url of website
@@ -56,13 +70,13 @@ public class ListRSSItemsActivity extends ListActivity {
   
             public void onItemClick(AdapterView<?> parent, View view,
                     int position, long id) {
-                //Intent in = new Intent(getApplicationContext(), DisPlayWebPageActivity.class);
+                Intent in = new Intent(getApplicationContext(), DisPlayWebPageActivity.class);
                  
                 // getting page url
                 String page_url = ((TextView) view.findViewById(R.id.page_url)).getText().toString();
                 Toast.makeText(getApplicationContext(), page_url, Toast.LENGTH_SHORT).show();
-                //in.putExtra("page_url", page_url);
-                //startActivity(in);
+                in.putExtra("page_url", page_url);
+                startActivity(in);
             }
         });
     }
@@ -109,7 +123,7 @@ public class ListRSSItemsActivity extends ListActivity {
                 String description = item.getDescription();
                 // taking only 200 chars from description
                 if(description.length() > 100){
-                    description = description.substring(0, 97) + "...";
+                    description = description.substring(0, 97) + "..";
                 }
                 map.put(TAG_DESRIPTION, description);
  

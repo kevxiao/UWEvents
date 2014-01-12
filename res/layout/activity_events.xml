@@ -6,12 +6,12 @@
     android:orientation="vertical"
     android:background="#ffffff">
     
-    <include layout="@drawable/header"/>
+    <include layout="@layout/header"/>
     
     <!-- The main content view -->
     <ListView
         android:id="@android:id/list"
-        android:layout_below="@drawable/header"
+        android:layout_below="@/header"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:divider="#bababa"
