@@ -67,8 +67,7 @@ public class Events extends Activity {
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setHomeButtonEnabled(true);
 
-		// ActionBarDrawerToggle ties together the the proper interactions
-		// between the sliding drawer and the action bar app icon
+		// Allows app icon to open drawer
 		mDrawerToggle = new ActionBarDrawerToggle(
 				this,                   //host Activity 
 				mDrawerLayout,          //DrawerLayout object 
